@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A TWOSOME PLACE</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        html,
+        body {
+            width: 1344;
+            height: 768px;
+        }
+
+        table,
+        tr,
+        td {
+            border-collapse: collapse;
+
+        }
+
+        td {
+
+            border: 1px solid black;
+        }
+
+        #exit-canvas-cover {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: chartreuse;
+        }
+
+        #exit-canvas {
+            width: 200px;
+            height: 200px;
+            border-collapse: collapse;
+            position: absolute;
+            background-color: black;
+            transform: scale(0.90);
+        }
+
+        #line-3 {
+            width: 200px;
+            height: 200px;
+            border-collapse: collapse;
+            position: absolute;
+        }
+
+        #circle-3 {
+            width: 200px;
+            height: 200px;
+            border-collapse: collapse;
+            position: absolute;
+        }
+
+        #tri-canvas {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        #tri {
+            background-color: whitesmoke;
+            width: 200px;
+            height: 200px;
+            position: absolute;
+        }
+
+        #tile-canvas {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-collapse: collapse;
+            border: 1px solid gray;
+        }
+
+        #atwosomeplace {
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            position: absolute;
+        }
+
+        #lamp {
+            border-radius: 50px;
+            border: 1px solid black;
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            background-color: blanchedalmond;
+            bottom: 0;
+        }
+
+        #vertical-bar {
+            border-right: 1px solid black;
+            height: 150px;
+            position: absolute;
+            left: 25px;
+
+        }
+
+        .pannel {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            border-collapse: collapse;
+            margin: 12px;
+            border: 1px solid black;
+            display: inline-block;
+        }
+
+        #lamp-center-line {
+            border: 1px solid black;
+            width: 50px;
+            top: 175px;
+            position: absolute;
+        }
+
+        #lamp-top-holder {
+            border: 1px solid black;
+            left: 14px;
+            width: 20px;
+            top: 0;
+            height: 5px;
+            background-color: black;
+            border-bottom-left-radius: 25px;
+            border-bottom-right-radius: 25px;
+            position: absolute;
+        }
+
+        #lamp-center-holder {
+            border: 1px solid black;
+            left: 14px;
+            width: 20px;
+            height: 5px;
+            border-top-left-radius: 25px;
+            border-top-right-radius: 25px;
+            top: 145px;
+            background-color: black;
+            position: absolute;
+
+        }
+
+        #window {
+            background-color: darkblue;
+            width: 200px;
+            height: 200px;
+            position: absolute;
+        }
+
+        #tile-nava {
+            background-color: navajowhite;
+            width: 200px;
+            height: 200px;
+            position: absolute;
+        }
+
+        #for-you {
+            width: 200px;
+            height: 200px;
+            font-size: xx-small;
+            position: absolute;
+        }
+
+        #special-text {
+            margin-top: 4px;
+            margin-left: 4px;
+            text-align: center;
+        }
+
+        #fill-radius-button {
+            position: absolute;
+            height: 25px;
+            margin: 25px;
+            width: 150px;
+            border-radius: 25px;
+            background-color: beige;
+
+        }
+
+        #black-vertical-line {
+            border-right: 1px solid black;
+            width: 48px;
+            height: 200px;
+            float: left;
+            margin-left: 2px;
+            border-collapse: collapse;
+        }
+
+        #gold-outer-line {
+            border: 1px solid gold;
+            width: 200px;
+            height: 200px;
+        }
+
+        .rotate-90 {
+            transform: rotate(90);
+        }
+
+        #tile-1-black {
+            position: relative;
+            background-color: white;
+            width: 200px;
+            height: 200px;
+        }
+
+        .garo.line {
+            position: absolute;
+            left: 0;
+            width: 200px;
+            height: 24px;
+            top: 176px;
+            background-color: black;
+        }
+
+        .garo.half.line {
+            position: absolute;
+            left: 16px;
+            margin-left: 24px;
+            width: 153px;
+            height: 153px;
+            border-left: 7px solid black;
+            border-bottom: 7px solid black;
+            top: 0px;
+            background-color: white;
+
+        }
+
+        .sero.left {
+            width: 24px;
+            height: 200px;
+            position: absolute;
+            top: 0;
+            background-color: black;
+            left: 0;
+        }
+
+        .sero.left-2-half {
+            width: 7px;
+            height: 200px;
+            position: absolute;
+            top: 0;
+            background-color: black;
+            margin-left: 48px;
+        }
+
+        #tile-l-black-0 {
+            position: absolute;
+            transform: rotate(0deg);
+            width: 200px;
+            height: 200px;
+            top: 0;
+            left: 0;
+        }
+
+        #tile-l-black-90 {
+            position: absolute;
+            transform: rotate(90deg);
+            width: 200px;
+            height: 200px;
+            top: 0;
+            left: 0;
+        }
+
+        #tile-l-black-180 {
+            position: absolute;
+            transform: rotate(180deg);
+            width: 200px;
+            height: 200px;
+            top: 0;
+            left: 0;
+        }
+
+        #tile-l-black-270 {
+            position: absolute;
+            transform: rotate(270deg);
+            width: 200px;
+            height: 200px;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="pannel">
+        <div id="exit-canvas-cover">
+
+        </div>
+        <canvas id="exit-canvas" width="200" height="200">
+        </canvas>
+        <script>
+            var exitCanvas = document.getElementById("exit-canvas");
+            var exitContext = exitCanvas.getContext("2d");
+
+            exitContext.beginPath();
+            exitContext.arc(100, 25, 15, 0, 2 * Math.PI);
+            exitContext.strokeStyle = 'chartreuse';
+            exitContext.lineWidth = 3;
+            exitContext.stroke();
+
+            exitContext.beginPath();
+            exitContext.moveTo(105, 115);
+            exitContext.lineTo(90, 50);
+            exitContext.stroke();
+
+
+            exitContext.beginPath();
+            exitContext.moveTo(135, 115);
+            exitContext.lineTo(105, 115);
+            exitContext.stroke();
+
+            exitContext.beginPath();
+            exitContext.moveTo(120, 50);
+            exitContext.lineTo(135, 115);
+            exitContext.stroke();
+
+
+            exitContext.beginPath();
+            exitContext.moveTo(105, 115);
+            exitContext.lineTo(75, 175);
+            exitContext.stroke();
+
+            exitContext.beginPath();
+            exitContext.moveTo(125, 140);
+            exitContext.lineTo(165, 140);
+            exitContext.stroke();
+
+            exitContext.beginPath();
+            exitContext.moveTo(125, 115);
+            exitContext.lineTo(125, 140);
+            exitContext.stroke();
+
+            exitContext.beginPath();
+            exitContext.moveTo(90, 50);
+            exitContext.lineTo(130, 50);
+            exitContext.stroke();
+            exitContext.beginPath();
+            exitContext.moveTo(75, 75);
+            exitContext.lineTo(60, 55);
+            exitContext.stroke();
+
+            exitContext.beginPath();
+            exitContext.moveTo(130, 50);
+            exitContext.lineTo(140, 75);
+            exitContext.stroke();
+
+
+            exitContext.beginPath();
+            exitContext.moveTo(90, 50);
+            exitContext.lineTo(75, 75);
+            exitContext.stroke();
+
+
+            exitContext.beginPath();
+            exitContext.moveTo(25, 0);
+            exitContext.lineTo(25, 175);
+            exitContext.stroke();
+
+            // exitContext.beginPath();
+            // exitContext.moveTo(0, 175);
+            // exitContext.lineTo(25, 200);
+            // exitContext.stroke();
+
+            exitContext.beginPath();
+            exitContext.moveTo(175, 175);
+            exitContext.lineTo(200, 200);
+            exitContext.stroke();
+
+
+
+            // exitContext.beginPath();
+            // exitContext.moveTo(0, 175);
+            // exitContext.lineTo(25, 200);
+            // exitContext.stroke();
+
+            // exitContext.beginPath();
+            // exitContext.rect(0, 175, 25, 200);
+            // exitContext.fillStyle = "chartreuse";
+            // exitContext.fill();
+
+
+            exitContext.beginPath();
+            exitContext.moveTo(25, 175);
+            exitContext.lineTo(50, 200);
+            exitContext.stroke();
+
+
+            // exitContext.beginPath();
+            // exitContext.rect(0, 0, 50, 175);
+            // exitContext.fillStyle = "chartreuse";
+            // exitContext.fill();
+            exitContext.beginPath();
+            exitContext.moveTo(175, 0);
+            exitContext.lineTo(175, 175);
+            exitContext.stroke();
+            // exitContext.beginPath();
+            // exitContext.rect(150, 0, 200, 175);
+            // exitContext.fillStyle = "chartreuse";
+            // exitContext.fill();
+        </script>
+    </div>
+    <div class="pannel">
+        <table id="atwosomeplace">
+            <tr rowspan=2>
+                <td style="background-color:darkgray"> </td>
+                <td style="background-color:red"> </td>
+            </tr>
+            <tr>
+                <td colspan=2 style="background-color:black;color:white;">
+                    <div><b>A TWOSOME PLACE</b></div>
+                    <div><small>COFFEE & DESSERT</small></div>
+                </td>
+            </tr>
+            <tr rowspan=2>
+                <td style="background-color:red"> </td>
+                <td style="background-color:darkgray"> </td>
+            </tr>
+        </table>
+    </div>
+    <div class="pannel">
+        <div id="lamp-top-holder"></div>
+        <div id="vertical-bar">
+
+        </div>
+        <div id="lamp">
+
+        </div>
+
+        <div id="lamp-center-holder">
+
+        </div>
+        <div id="lamp-center-line">
+
+        </div>
+    </div>
+    <div class="pannel">
+        <div id="window">
+        </div>
+    </div>
+    <div class="pannel">
+        <div id="tile-nava">
+
+        </div>
+    </div>
+    </div>
+
+    <div class="pannel">
+        <div id="tile-nava">
+            <div id="black-vertical-line">
+            </div>
+            <div id="black-vertical-line">
+            </div>
+            <div id="black-vertical-line">
+            </div>
+        </div>
+    </div>
+    <div class="pannel">
+        <div id="tile-l-black">
+            <div class="sero left">
+
+            </div>
+            <div class="garo line">
+
+            </div>
+            <div class="garo half line">
+
+            </div>
+        </div>
+    </div>
+    <div class="pannel">
+        <canvas id="tile-canvas" width="200" height="200"></canvas>
+        <script>
+            var tileCanvas = document.getElementById("tile-canvas");
+            var tileContext = tileCanvas.getContext("2d");
+
+            tileContext.beginPath();
+            tileContext.arc(0, 0, 12, 0, 2 * Math.PI);
+            tileContext.fill();
+
+
+            tileContext.beginPath();
+            tileContext.arc(0, 200, 12, 0, 2 * Math.PI);
+            tileContext.fill();
+
+            tileContext.beginPath();
+            tileContext.arc(200, 0, 12, 0, 2 * Math.PI);
+            tileContext.fill();
+
+            tileContext.beginPath();
+            tileContext.arc(100, 100, 12, 0, 2 * Math.PI);
+            tileContext.fill();
+
+            tileContext.beginPath();
+            tileContext.arc(200, 200, 12, 0, 2 * Math.PI);
+            tileContext.fill();
+
+            tileContext.beginPath();
+            tileContext.arc(88, 88, 12, 0, 2 * Math.PI);
+            tileContext.fill();
+            tileContext.beginPath();
+            tileContext.arc(112, 88, 12, 0, 2 * Math.PI);
+            tileContext.fill();
+
+            tileContext.beginPath();
+            tileContext.arc(112, 112, 12, 0, 2 * Math.PI);
+            tileContext.fill();
+
+            tileContext.beginPath();
+            tileContext.arc(88, 112, 12, 0, 2 * Math.PI);
+            tileContext.fill();
+
+
+            tileContext.beginPath();
+            tileContext.moveTo(0, 0);
+            tileContext.lineTo(200, 200);
+            tileContext.strokeStyle = 'darkgray';
+            tileContext.lineWidth = 7;
+
+            tileContext.stroke();
+            tileContext.beginPath();
+            tileContext.moveTo(200, 0);
+            tileContext.lineTo(0, 200);
+            tileContext.strokeStyle = 'darkgray';
+            tileContext.lineWidth = 7;
+            tileContext.stroke();
+        </script>
+    </div>
+    <div class="pannel">
+        <div id="tile-l-black">
+            <div class="sero left">
+
+            </div>
+            <div class="sero left-2-half">
+
+            </div>
+        </div>
+    </div>
+    <div class="pannel">
+        <div id="tile-l-black-90">
+            <div class="sero left">
+
+            </div>
+            <div class="sero left-2-half">
+
+            </div>
+        </div>
+    </div>
+    <div class="pannel">
+        <div id="tile-l-black-270">
+            <div class="sero left">
+
+            </div>
+            <div class="sero left-2-half">
+
+            </div>
+        </div>
+    </div>
+    <div class="pannel">
+        <div id="tile-l-black-180">
+            <div class="sero left">
+
+            </div>
+            <div class="sero left-2-half">
+
+            </div>
+        </div>
+    </div>
+    <div class="pannel">
+        <div id="for-you">
+            <div id="fill-radius-button">
+                <div id="special-text">
+                    SPECIALLY CUREATED FOR YOU
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pannel">
+        <div id="tri">
+            <canvas id="tri-canvas" width="200" height="200"></canvas>
+        </div>
+        <script>
+            var triCanvas = document.getElementById("tri-canvas");
+            var triContext = triCanvas.getContext("2d");
+            triContext.beginPath();
+            triContext.moveTo(100, 0);
+            triContext.lineTo(0, 200);
+            triContext.strokeStyle = '#000000';
+            triContext.stroke(); triContext.beginPath();
+            triContext.moveTo(100, 0);
+            triContext.lineTo(200, 200);
+            triContext.strokeStyle = '#000000';
+            triContext.stroke();
+
+
+            // triContext.beginPath();
+            // triContext.arc(88, 112, 12, 0, 2 * Math.PI);
+            // triContext.fill();
+        </script>
+    </div>
+    <div class="pannel">
+        <div id="circle-3">
+            <canvas id="circle-canvas" width="200" height="200"></canvas>
+        </div>
+        <script>
+            var circleCanvas = document.getElementById("circle-canvas");
+            var circle3Context = circleCanvas.getContext("2d");
+            circle3Context.beginPath();
+            circle3Context.arc(75, 75, 50, 0, 2 * Math.PI);
+            circle3Context.stroke();
+            circle3Context.beginPath();
+            circle3Context.arc(125, 75, 50, 0, 2 * Math.PI);
+            circle3Context.stroke();
+            circle3Context.beginPath();
+            circle3Context.arc(100, 125, 50, 0, 2 * Math.PI);
+            circle3Context.stroke();
+        </script>
+    </div>
+    <div class="pannel">
+        <canvas id="line-3" width="200" height="200">
+
+        </canvas>
+        <script>
+            var line3Canvas = document.getElementById("line-3");
+            var line3Context = line3Canvas.getContext("2d");
+            line3Context.beginPath();
+            line3Context.moveTo(75, 50);
+            line3Context.lineTo(175, 50);
+            line3Context.lineWidth = 3;
+            line3Context.stroke();
+            line3Context.beginPath();
+            line3Context.moveTo(25, 75);
+            line3Context.lineTo(125, 75);
+            line3Context.stroke();
+            line3Context.beginPath();
+            line3Context.moveTo(50, 100);
+            line3Context.lineTo(150, 100);
+            line3Context.stroke();
+        </script>
+    </div>
+</body>
+
+</html>
